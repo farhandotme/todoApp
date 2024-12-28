@@ -11,10 +11,10 @@ const Todo = () => {
     return JSON.parse(datas)
   })
   const [datetime, setDatetime] = useState("");
-  const handleSubmit = (input) => {
+  function handleSubmit(input) {
     const { id, content, checked } = input;
     if (!content) return;
-    const iftodoContentMatched = Task.find(curr => curr.content == content)
+    const iftodoContentMatched = Task.find(curr => curr.content == content);
     if (iftodoContentMatched) return;
     if (Task.includes(input)) return;
     setTask((prev) => [...prev, { id, content, checked }]);
